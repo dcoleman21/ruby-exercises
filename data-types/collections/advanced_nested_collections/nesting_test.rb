@@ -16,10 +16,11 @@ require 'minitest/pride'
 class NestedTest < MiniTest::Test
 
   def test_list_of_olive_garden_employess
-    skip
+    skip 
     #^^^ Un-Skip each test
     #=======================
     # EXAMPLE
+    require "pry"; binding.pry
     employees = stores[:olive_garden][:employees]
     #=======================
     assert_equal ["Jeff", "Zach", "Samantha"], employees
