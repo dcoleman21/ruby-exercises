@@ -146,7 +146,8 @@ class NestesdCollectionsTest < Minitest::Test
   def test_12
     three_day_forecast = {days: [{high: 70,low: 63,summary: "Mostly Sunny"},
       {high: 55,low: 47,summary: "Partly Cloudy"},
-      {high: 77,low: 64,summary: "Sunny"}], "date" => "6-21-18",ref_num: 3456789765456787656}
+      {high: 77,low: 64,summary: "Sunny"}],
+      "date" => "6-21-18",ref_num: 3456789765456787656}
     # Using the three_day_forecast variable defined above,
     # retrieve the expected piece of information
 
@@ -158,7 +159,8 @@ class NestesdCollectionsTest < Minitest::Test
   def test_13
     three_day_forecast = {days: [{high: 70,low: 63,summary: "Mostly Sunny"},
       {high: 55,low: 47,summary: "Partly Cloudy"},
-      {high: 77,low: 64,summary: "Sunny"}], "date" => "6-21-18",ref_num: 3456789765456787656}
+      {high: 77,low: 64,summary: "Sunny"}],
+      "date" => "6-21-18",ref_num: 3456789765456787656}
     # Using the three_day_forecast variable defined above,
     # retrieve the expected piece of information
 
@@ -170,7 +172,8 @@ class NestesdCollectionsTest < Minitest::Test
   def test_14
     three_day_forecast = {days: [{high: 70,low: 63,summary: "Mostly Sunny"},
       {high: 55,low: 47,summary: "Partly Cloudy"},
-      {high: 77,low: 64,summary: "Sunny"}], "date" => "6-21-18",ref_num: 3456789765456787656}
+      {high: 77,low: 64,summary: "Sunny"}],
+      "date" => "6-21-18",ref_num: 3456789765456787656}
     # Using the three_day_forecast variable defined above,
     # retrieve the expected piece of information
 
@@ -188,64 +191,78 @@ class NestesdCollectionsTest < Minitest::Test
       ref_num: 3456789765456787656}
     # Using the three_day_forecast variable defined above,
     # retrieve the expected piece of information
-    require "pry"; binding.pry
-    actual =
+    actual = three_day_forecast[:days][1][:high]
     expected = 55
     assert_equal expected, actual
   end
 
   def test_16
-    skip
     three_day_forecast = {days: [{high: 70,low: 63,summary: "Mostly Sunny"},
       {high: 55,low: 47,summary: "Partly Cloudy"},
-      {high: 77,low: 64,summary: "Sunny"}], "date" => "6-21-18",ref_num: 3456789765456787656}
+      {high: 77,low: 64,summary: "Sunny"}],
+      "date" => "6-21-18",ref_num: 3456789765456787656}
     # Using the three_day_forecast variable defined above,
     # retrieve the expected piece of information
-
-    actual = ________
+    actual = three_day_forecast[:days][0].keys
     expected = [:high, :low, :summary]
     assert_equal expected, actual
   end
 
   def test_17
-    skip
-    three_day_forecast = {days: [{high: 70,low: 63,summary: "Mostly Sunny"},{high: 55,low: 47,summary: "Partly Cloudy"},{high: 77,low: 64,summary: "Sunny"}], "date" => "6-21-18",ref_num: 3456789765456787656}
+    three_day_forecast = {days: [{high: 70,low: 63,summary: "Mostly Sunny"},
+      {high: 55,low: 47,summary: "Partly Cloudy"},
+      {high: 77,low: 64,summary: "Sunny"}],
+       "date" => "6-21-18",ref_num: 3456789765456787656}
     # Using the three_day_forecast variable defined above,
     # retrieve the expected piece of information
 
-    actual = ________
+    actual = three_day_forecast[:days][2].values
     expected = [77, 64, "Sunny"]
     assert_equal expected, actual
   end
 
   def test_18
-    skip
-    three_day_forecast = {days: [{high: 70,low: 63,summary: "Mostly Sunny"},{high: 55,low: 47,summary: "Partly Cloudy"},{high: 77,low: 64,summary: "Sunny"}], "date" => "6-21-18",ref_num: 3456789765456787656}
+    three_day_forecast = {days: [{high: 70,low: 63,summary: "Mostly Sunny"},
+      {high: 55,low: 47,summary: "Partly Cloudy"},
+      {high: 77,low: 64,summary: "Sunny"}],
+      "date" => "6-21-18",ref_num: 3456789765456787656}
     # Using the three_day_forecast variable defined above,
     # retrieve the expected piece of information
 
-    actual = _________
+    actual = three_day_forecast.keys[1]
     expected = "date"
     assert_equal expected, actual
   end
 
   def test_19
-    skip
-    three_day_forecast = {days: [{high: 70,low: 63,summary: "Mostly Sunny"},{high: 55,low: 47,summary: "Partly Cloudy"},{high: 77,low: 64,summary: "Sunny"}], "date" => "6-21-18",ref_num: 3456789765456787656}
+    three_day_forecast = {days: [{high: 70,low: 63,summary: "Mostly Sunny"},
+      {high: 55,low: 47,summary: "Partly Cloudy"},
+      {high: 77,low: 64,summary: "Sunny"}],
+      "date" => "6-21-18",ref_num: 3456789765456787656}
     # Using the three_day_forecast variable defined above,
     # Change the high on the fist day to 99
-    _______
-    expected = {days: [{high: 99,low: 63,summary: "Mostly Sunny"},{high: 55,low: 47,summary: "Partly Cloudy"},{high: 77,low: 64,summary: "Sunny"}], "date" => "6-21-18",ref_num: 3456789765456787656}
+
+    three_day_forecast[:days][0][:high] = 99
+    expected = {days: [{high: 99,low: 63,summary: "Mostly Sunny"},
+      {high: 55,low: 47,summary: "Partly Cloudy"},
+      {high: 77,low: 64,summary: "Sunny"}],
+      "date" => "6-21-18",ref_num: 3456789765456787656}
     assert_equal expected, three_day_forecast
   end
 
   def test_20
-    skip
-    three_day_forecast = {days: [{high: 70,low: 63,summary: "Mostly Sunny"},{high: 55,low: 47,summary: "Partly Cloudy"},{high: 77,low: 64,summary: "Sunny"}], "date" => "6-21-18",ref_num: 3456789765456787656}
+    three_day_forecast = {days: [{high: 70,low: 63,summary: "Mostly Sunny"},
+      {high: 55,low: 47,summary: "Partly Cloudy"},
+      {high: 77,low: 64,summary: "Sunny"}],
+      "date" => "6-21-18",ref_num: 3456789765456787656}
     # Using the three_day_forecast variable defined above,
     # Add a new key "time" with the value "12:30"
-    _________
-    expected = {"time" => "12:30", days: [{high: 70,low: 63,summary: "Mostly Sunny"},{high: 55,low: 47,summary: "Partly Cloudy"},{high: 77,low: 64,summary: "Sunny"}], "date" => "6-21-18",ref_num: 3456789765456787656}
+
+    three_day_forecast["time"] = "12:30"
+    expected = {"time" => "12:30", days: [{high: 70,low: 63,summary: "Mostly Sunny"},
+      {high: 55,low: 47,summary: "Partly Cloudy"},
+      {high: 77,low: 64,summary: "Sunny"}],
+      "date" => "6-21-18",ref_num: 3456789765456787656}
     assert_equal expected, three_day_forecast
   end
 end
