@@ -10,19 +10,16 @@ class VampireTest < Minitest::Test
   end
 
   def test_it_is_named_something_else
-    skip
     vampire = Vampire.new("Vladimir")
     assert_equal "Vladimir", vampire.name
   end
 
   def test_it_keeps_a_pet_bat_by_default
-    skip
     vampire = Vampire.new("Ruthven")
     assert_equal "bat", vampire.pet
   end
 
   def test_it_can_have_other_pets
-    skip
     vampire = Vampire.new("Varney", "fox")
     assert_equal "fox", vampire.pet
   end
