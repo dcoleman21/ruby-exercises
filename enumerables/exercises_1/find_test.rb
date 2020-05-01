@@ -45,37 +45,42 @@ class FindTest < Minitest::Test
   end
 
   def test_find_first_even_number
-    skip
     numbers = [3, 7, 13, 11, 10, 2, 17]
-    # Your code goes here
+    found = numbers.find do |number|
+      number.even? == true
+    end
     assert_equal 10, found
   end
 
   def test_find_first_multiple_of_3
-    skip
     numbers = [2, 8, 9, 27, 24, 5]
-    # Your code goes here
+    found = numbers.find do |number|
+      number % 3 == 0
+    end
     assert_equal 9, found
   end
 
   def test_find_first_word_starting_with_q
-    skip
     words = ["weirdo", "quill", "fast", "quaint", "quitter", "koala"]
-    # Your code goes here
+    found = words.find do |word|
+      word.start_with? "q"
+    end
     assert_equal "quill", found
   end
 
   def test_find_first_word_ending_with_er
-    skip
     words = ["biggest", "pour", "blight", "finger", "pie", "border"]
-    # Your code goes here
+    found = words.find do |word|
+      word.end_with? "er"
+    end
     assert_equal "finger", found
   end
 
   def test_find_first_number_greater_than_20
-    skip
     numbers = [1, 8, 19, 21, 29, 31, 34]
-    # Your code goes here
+    found = numbers.find do |number|
+      number > 20
+    end   
     assert_equal 21, found
   end
 
